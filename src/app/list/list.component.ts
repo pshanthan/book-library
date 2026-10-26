@@ -46,4 +46,5 @@ export class ListComponent implements OnInit {
   getBooks() {
     this.listService.getBooks().subscribe((book) => this.books.set(book));
   }
+  startEdit() {}
 }
