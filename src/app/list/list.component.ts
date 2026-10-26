@@ -3,15 +3,43 @@ import { signal } from '@angular/core';
 import { Book } from '../../Book';
 import { ListService } from '../list.service';
 import { CommonModule } from '@angular/common';
+import {
+  FormControl,
+  ReactiveFormsModule,
+  Form,
+  Validators,
+} from '@angular/forms';
 @Component({
   selector: 'app-list',
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
 export class ListComponent implements OnInit {
   constructor(private listService: ListService) {}
   books = signal<Book[]>([]);
+  bookForm = new FormGroup({
+    title: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    author: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    pages: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    publishedDate: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    read: new FormControl(false, {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+  });
   ngOnInit(): void {
     this.getBooks();
   }
