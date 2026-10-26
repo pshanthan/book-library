@@ -5,8 +5,8 @@ import { ListService } from '../list.service';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
+  FormGroup,
   ReactiveFormsModule,
-  Form,
   Validators,
 } from '@angular/forms';
 @Component({
