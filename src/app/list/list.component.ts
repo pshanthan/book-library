@@ -18,6 +18,7 @@ import {
 export class ListComponent implements OnInit {
   constructor(private listService: ListService) {}
   books = signal<Book[]>([]);
+  editingId: number | null = null;
   bookForm = new FormGroup({
     title: new FormControl('', {
       nonNullable: true,
@@ -46,5 +47,6 @@ export class ListComponent implements OnInit {
   getBooks() {
     this.listService.getBooks().subscribe((book) => this.books.set(book));
   }
-  startEdit() {}
+  startEdit(b: Book) {}
+  onSubmit() {}
 }
