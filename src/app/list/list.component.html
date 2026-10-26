@@ -1,4 +1,11 @@
-<form formGroup="b"></form>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <input formControlName="title" />
+  <input formControlName="author" />
+  <input formControlName="pages" />
+  <input formControlName="publishedDate" />
+  <input type="checkbox" formControlName="read" />
+  <button type="submit">SUBMIT</button>
+</form>
 <div *ngFor="let b of books()">
   {{ b.title }} - {{ b.author }} - {{ b.pages }} - {{ b.publishedDate }} -
   {{ b.read }}
