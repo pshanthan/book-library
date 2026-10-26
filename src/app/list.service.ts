@@ -15,7 +15,7 @@ export class ListService {
     return this.httpClient.delete<void>(`${this.apiUrl}/${book.id}`);
   }
   updateBook(book: Book): Observable<Book> {
-    return this.httpClient.put<Book>(`${this.apiUrl}/${book}`, book);
+    return this.httpClient.put<Book>(`${this.apiUrl}/${book.id}`, book);
   }
   addBook(book: Book): Observable<Book> {
     return this.httpClient.post<Book>(`${this.apiUrl}`, book);
