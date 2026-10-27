@@ -69,7 +69,9 @@ export class ListComponent implements OnInit {
     };
     if (this.editingId) {
       transformedBook.id = this.editingId;
-      this.listService.updateBook(transformedBook).subscribe();
+      this.listService.updateBook(transformedBook).subscribe((updated) => {
+        this.books.update((found) => )
+      });
     }
   }
 }
