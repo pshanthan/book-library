@@ -1,7 +1,8 @@
-<div *ngFor="let b of books()">
-  {{ b.title }} - {{ b.author }} - {{ b.pages }} - {{ b.publishedDate }} -
-  {{ b.read }}
-  <button (click)="startEdit(b)">EDIT</button>
-  <button (click)="deleteBook(b.id!)"></button>
+<div>
+  {{ book.title }} - {{ book.author }} - {{ book.pages }} -
+  {{ book.publishedDate }} -
+  {{ book.read }}
+  <button (click)="startEdit(book)">EDIT</button>
+  <button (click)="deleteBook(book.id!)"></button>
 </div>
 >
