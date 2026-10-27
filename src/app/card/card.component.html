@@ -2,7 +2,7 @@
   {{ book.title }} - {{ book.author }} - {{ book.pages }} -
   {{ book.publishedDate }} -
   {{ book.read }}
-  <button (click)="startEdit(book)">EDIT</button>
-  <button (click)="deleteBook(book.id!)"></button>
+  <button (click)="edit.emit(book)">EDIT</button>
+  <button (click)="delete.emit(book.id!)"></button>
 </div>
 >
