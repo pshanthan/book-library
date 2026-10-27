@@ -11,7 +11,7 @@ export class ListService {
   getBooks(): Observable<Book[]> {
     return this.httpClient.get<Book[]>(this.apiUrl);
   }
-  deleteBook(book: Book): Observable<void> {
+  deleteBook(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.apiUrl}/${book.id}`);
   }
   updateBook(book: Book): Observable<Book> {
