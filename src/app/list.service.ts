@@ -12,7 +12,7 @@ export class ListService {
     return this.httpClient.get<Book[]>(this.apiUrl);
   }
   deleteBook(id: number): Observable<void> {
-    return this.httpClient.delete<void>(`${this.apiUrl}/${book.id}`);
+    return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
   }
   updateBook(book: Book): Observable<Book> {
     return this.httpClient.put<Book>(`${this.apiUrl}/${book.id}`, book);
