@@ -10,6 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
+
 @Component({
   selector: 'app-list',
   imports: [CommonModule, ReactiveFormsModule, CardComponent],

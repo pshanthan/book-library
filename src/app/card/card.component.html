@@ -1,5 +1,5 @@
 <div>
-  {{ book.title }} - {{ book.author }} - {{ book.pages }} -
+  {{ book.title }} - {{ book.author }} - {{ book.pages | pages }} -
   {{ book.publishedDate }} -
   {{ book.read }}
   <button (click)="edit.emit(book)">EDIT</button>
