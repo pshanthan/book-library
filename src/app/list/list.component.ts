@@ -47,6 +47,15 @@ export class ListComponent implements OnInit {
   getBooks() {
     this.listService.getBooks().subscribe((book) => this.books.set(book));
   }
-  startEdit(b: Book) {}
+  startEdit(b: Book) {
+    this.editingId = b.id ?? null;
+    this.bookForm.patchValue({
+      title: b.title,
+      author: b.author,
+      pages: String(b.pages),
+      publishedDate: b.publishedDate,
+      read: b.read,
+    });
+  }
   onSubmit() {}
 }
