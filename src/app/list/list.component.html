@@ -7,5 +7,9 @@
   <button type="submit">SUBMIT</button>
 </form>
 <div *ngFor="let b of books()">
-  <app-card [book]="b"></app-card>
+  <app-card
+    [book]="b"
+    (edit)="startEdit($event)"
+    delete="deleteBook($event)"
+  ></app-card>
 </div>
