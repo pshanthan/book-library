@@ -12,4 +12,5 @@ import { CommonModule } from '@angular/common';
 export class CardComponent {
   @Input() book!: Book;
   @Output() delete = new EventEmitter<number>();
+  @Output() edit = new EventEmitter<Book>();
 }
