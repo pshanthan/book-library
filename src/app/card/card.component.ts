@@ -1,6 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import { Book } from '../../Book';
-import { Input } from '@angular/core';
+import { Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
