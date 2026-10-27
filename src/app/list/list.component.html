@@ -7,8 +7,5 @@
   <button type="submit">SUBMIT</button>
 </form>
 <div *ngFor="let b of books()">
-  {{ b.title }} - {{ b.author }} - {{ b.pages }} - {{ b.publishedDate }} -
-  {{ b.read }}
-  <button (click)="startEdit(b)">EDIT</button>
-  <button (click)="deleteBook(b.id!)"></button>
+  <app-card (book)="(b)"></app-card>
 </div>
