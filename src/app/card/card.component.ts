@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Book } from '../../Book';
 import { Input } from '@angular/core';
 
@@ -10,4 +10,5 @@ import { Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() book!: Book;
-}
+  @Output() delete = new EventEmitter<number()>
+ }
