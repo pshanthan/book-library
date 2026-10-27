@@ -1,4 +1,4 @@
-<div>
+<div *ngFor="let b of books()">
   {{ b.title }} - {{ b.author }} - {{ b.pages }} - {{ b.publishedDate }} -
   {{ b.read }}
   <button (click)="startEdit(b)">EDIT</button>

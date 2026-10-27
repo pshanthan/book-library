@@ -9,7 +9,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
 import { CardComponent } from '../card/card.component';
 @Component({
   selector: 'app-list',
