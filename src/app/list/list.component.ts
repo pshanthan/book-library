@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
 @Component({
   selector: 'app-list',
   imports: [CommonModule, ReactiveFormsModule],
@@ -57,5 +58,18 @@ export class ListComponent implements OnInit {
       read: b.read,
     });
   }
-  onSubmit() {}
+  onSubmit() {
+    const raw = this.bookForm.getRawValue();
+    const transformedBook: Book = {
+      title: raw.title,
+      author: raw.author,
+      pages: Number(raw.pages),
+      publishedDate: raw.publishedDate,
+      read: raw.read,
+    };
+    if (this.editingId) {
+      transformedBook.id = this.editingId;
+      this.listService.updateBook(transformedBook).subscribe();
+    }
+  }
 }
