@@ -75,7 +75,7 @@ export class ListComponent implements OnInit {
         );
       });
     } else {
-      this.listService.addBook(transformedBook).subscribe((added) => {
+      this.listService.addBook(transformedBook).subscribe((updated) => {
         this.books.update((list) =>
           list.map((b) => (b.id === updated.id ? updated : b)),
         );
