@@ -84,7 +84,7 @@ export class ListComponent implements OnInit {
   }
   deleteBook(id: number){
     this.listService.deleteBook(id).subscribe(() => {
-    this.books.update((list) => list.filter((b) => b.id !== id))
-  }}
-  
+    this.books.update((list) => list.filter((b) => b.id !== id));
+  }
+} 
 }
