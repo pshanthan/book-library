@@ -79,5 +79,7 @@ export class ListComponent implements OnInit {
         this.books.update((list) => [...list, created]);
       });
     }
+    this.editingId = null;
+    this.bookForm.reset();
   }
 }
