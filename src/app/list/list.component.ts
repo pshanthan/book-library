@@ -10,6 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CardComponent } from '../card/card.component';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -46,7 +47,17 @@ export class ListComponent implements OnInit {
   });
   ngOnInit(): void {
     this.getBooks();
-    this.searchControl.valueChanges.subscribe((term) => console.log(term));
+    this.searchControl.valueChanges
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        switchMap((term) =>
+          term
+            ? this.listService.searchBook(term)
+            : this.listService.getBooks(),
+        ),
+      )
+      .subscribe((books) => this.books.set(books));
   }
   getBooks() {
     this.listService.getBooks().subscribe((book) => this.books.set(book));
