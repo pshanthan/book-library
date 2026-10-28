@@ -1,3 +1,4 @@
+<input [formControl]="searchControl" placeholder="Search Books" />
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
   <input formControlName="title" />
   <input formControlName="author" />
