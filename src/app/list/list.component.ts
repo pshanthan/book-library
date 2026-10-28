@@ -46,6 +46,7 @@ export class ListComponent implements OnInit {
   });
   ngOnInit(): void {
     this.getBooks();
+    this.searchControl.valueChanges.subscribe((term) => console.log(term));
   }
   getBooks() {
     this.listService.getBooks().subscribe((book) => this.books.set(book));
