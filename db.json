@@ -1,15 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "The Alchemist",
-      "author": "Paulo Coelho",
-      "pages": 208,
-      "publishedDate": "1988-01-01",
-      "read": true
-    },
-    {
-      "id": 2,
+      "id": "2",
       "title": "Atomic Habits",
       "author": "James Clear",
       "pages": 320,
@@ -17,12 +9,13 @@
       "read": false
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Clean Code",
       "author": "Robert C. Martin",
       "pages": 464,
       "publishedDate": "2008-08-01",
       "read": true
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
