@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
   constructor(private listService: ListService) {}
   books = signal<Book[]>([]);
   editingId: number | null = null;
+  searchControl = new FormControl('', { nonNullable: true });
   bookForm = new FormGroup({
     title: new FormControl('', {
       nonNullable: true,
