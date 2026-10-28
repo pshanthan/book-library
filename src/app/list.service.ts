@@ -20,4 +20,7 @@ export class ListService {
   addBook(book: Book): Observable<Book> {
     return this.httpClient.post<Book>(`${this.apiUrl}`, book);
   }
+  searchBook(term: string): Observable<Book[]> {
+    return this.httpClient.get<Book[]>(`${this.apiUrl}?title_like=${term}`);
+  }
 }
